@@ -15,13 +15,6 @@ class ArticlesSeeder extends Seeder
      */
     public function run()
     {
-        $categories = Categories::factory(5)->create() ;
-
-        User::factory(10)->create()->each(function ($user) use ($categories) {
-            Articles::factory(rand(1,3))->create([
-                'user_id' => $user->id,
-                'categories_id' => ($categories->random(1)->first())->id
-            ]);
-        });
+        
     }
 }
