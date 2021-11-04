@@ -21,8 +21,8 @@ class CreateArticlesTable extends Migration
             $table->text('content');
             $table->string('image');
             $table->timestamps();
-            $table->foreignIdFor(User::class);
-            $table->foreignIdFor(Categories::class);
+            $table->foreignId('user_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('categories_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

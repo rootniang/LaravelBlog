@@ -28,7 +28,7 @@
                                 {{ $article->created_at->format('d M Y') }}
                             </span>
                             <a href="#" class="px-2 py-1 font-bold text-gray-100 bg-gray-600 rounded hover:bg-gray-500">
-                                {{ ($article->categorie->name) }}
+                                {{ $article->categorie->name }}
                             </a>
                         </div>
                         <div class="mt-2"><a href="#" class="text-2xl font-bold text-gray-700 hover:underline">Build

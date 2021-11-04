@@ -14,7 +14,7 @@ class ArticlesController extends Controller
      */
     public function index()
     {
-        $articles = Articles::with('categorie')->get() ;
+        $articles = Articles::all() ;
         return view('articles.index', compact('articles')) ;
     }
 

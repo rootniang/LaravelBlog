@@ -11,15 +11,15 @@ class Articles extends Model
 {
     use HasFactory;
 
-    //protected $guarded = [] ; 
+    protected $guarded = [] ; 
 
     public function user() {
 
-        return $this->belongsTo(User::class) ;
+        return $this->belongsTo(User::class, 'user_id') ;
     }
 
     public function categorie() {
 
-        return $this->belongsTo(Categories::class) ;
+        return $this->belongsTo(Categories::class, 'categories_id') ;
     }
 }
