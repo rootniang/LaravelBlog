@@ -15,9 +15,12 @@ use App\Http\Controllers\ArticlesController;
 */
 
 Route::get('/', [ArticlesController::class, 'index'])->name('articles.index');
-Route::resource('articles', ArticlesController::class)->except('index') ;
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::middleware(['auth'])->group(function () {
+    
+    Route::resource('articles', ArticlesController::class)->except('index') ;
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
 
 require __DIR__.'/auth.php';
